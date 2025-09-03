@@ -6,6 +6,10 @@
     margin: 0px auto;
     &__sidebar{
         padding: 40px 0 0px 135px;
+        @include abs.respond() {
+          padding: 40px 0 0px 35px;
+          @include abs.font("Poppins", 10px, #000000, 1.5, 400);
+        }
         flex: 25%;
         display: flex;
         flex-direction: column;
@@ -17,10 +21,19 @@
     }
     &__main{
         padding: 40px 135px 0px 45px;
+        align-self: center;
+        @include abs.respond() {
+          padding: 40px 35px 0px 45px;
+          img{
+            height: 200px;
+          }
+
+        }
         flex: 75%;
         img{
-            height: 98%;
-            object-fit: scale-down;
+            width: 100%;
+            object-fit:fill;
+         
         }
     }
 }

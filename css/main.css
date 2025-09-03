@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 
 body {
@@ -18,15 +18,11 @@ body {
   min-height: 100vh;
   background: white;
   margin: 0;
-}
-
-body {
   overflow-x: hidden;
 }
 
 section {
   width: 100%;
-  overflow-x: auto;
 }
 
 .header {
@@ -38,10 +34,15 @@ section {
   align-items: center;
   border-bottom: 1px solid #d6d6d6;
   position: sticky;
-  z-index: 10000;
+  z-index: 100;
   top: 0;
   max-width: 1440px;
   margin: 0px auto;
+}
+@media (max-width: 876px) {
+  .header {
+    padding: 40px 35px 15px 35px;
+  }
 }
 .header__logo {
   font-family: "Inter", sans-serif;
@@ -52,6 +53,11 @@ section {
   line-height: 1;
   font-weight: 700;
   text-decoration: none;
+}
+@media (max-width: 876px) {
+  .header__logo {
+    font-size: 16px;
+  }
 }
 .header__nav {
   display: flex;
@@ -67,15 +73,32 @@ section {
   font-weight: 400;
   text-decoration: none;
 }
+@media (max-width: 876px) {
+  .header__nav {
+    display: none;
+    font-size: 8px;
+  }
+}
 .header__actions {
   display: flex;
   align-items: center;
   gap: 25px;
 }
+@media (max-width: 876px) {
+  .header__actions {
+    gap: 12px;
+  }
+}
 .header__actions .header__btn {
   border: none;
   background: #ffffff;
   cursor: pointer;
+}
+@media (max-width: 876px) {
+  .header__actions .header__btn svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 .header__actions .header__btn--cart {
   position: relative;
@@ -135,6 +158,13 @@ section {
   right: 0;
   top: -5px;
 }
+@media (max-width: 876px) {
+  .header__actions .header__btn--cart .quantity {
+    font-size: 6px;
+    width: 10px;
+    height: 10px;
+  }
+}
 .header__actions .header__btn--cart .cart-list {
   display: none;
   width: 200px;
@@ -157,11 +187,169 @@ section {
   padding-right: 15px;
 }
 
-.footer {
-  background: #222;
-  color: #fff;
+footer {
   text-align: center;
-  padding: 1rem;
+  background: black;
+  color: white;
+  padding-bottom: 25px;
+}
+footer .footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 54px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 876px) {
+  footer .footer {
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 30px;
+    align-items: baseline;
+  }
+}
+footer .footer-address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+footer .footer-address__logo {
+  font-family: "Clash Display", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36PX;
+  color: white;
+  line-height: 1.4;
+  font-weight: 400;
+}
+footer .footer-address__address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+footer .footer-address__address p {
+  font-family: "Satoshi", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14PX;
+  color: white;
+  line-height: 19px;
+  font-weight: 400;
+  text-align: left;
+}
+footer .footer-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+footer .footer-social__title {
+  font-family: "Clash Display", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16PX;
+  color: white;
+  line-height: 20px;
+  font-weight: 400;
+}
+footer .footer-social__icon {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+@media (max-width: 876px) {
+  footer .footer-social__icon {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+    row-gap: 24px;
+  }
+}
+footer .footer-menu, footer .footer-category, footer .footer-company {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+}
+footer .footer-menu p, footer .footer-category p, footer .footer-company p {
+  font-family: "Satoshi", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14PX;
+  color: white;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+footer .footer-menu p:nth-child(1), footer .footer-category p:nth-child(1), footer .footer-company p:nth-child(1) {
+  font-family: "Clash Display", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16PX;
+  color: white;
+  line-height: 19px;
+  font-weight: 400;
+}
+@media (max-width: 876px) {
+  footer .footer-category {
+    display: none;
+  }
+  footer .footer-menu {
+    order: 1;
+  }
+  footer .footer-social {
+    order: 2;
+    margin-left: 10px;
+  }
+  footer .footer-company {
+    order: 3;
+  }
+  footer .footer-menu {
+    order: 4;
+    margin-left: 10px;
+  }
+}
+footer .footer-unline {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+footer .footer-unline .line {
+  margin: 0PX 80px 25px 80px;
+  height: 1px;
+  background: #4E4D93;
+  width: calc(100% - 160px);
+}
+@media (max-width: 876px) {
+  footer .footer-unline .line {
+    margin: 0PX 24px 20px 24px;
+    width: calc(100% - 48px);
+  }
+}
+footer .footer-unline p {
+  margin-left: 80px;
+  text-align: left;
+  background: #2A254B;
+  font-family: "Satoshi", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14PX;
+  color: white;
+  line-height: 19px;
+  font-weight: 400;
+}
+@media (max-width: 876px) {
+  footer .footer-unline p {
+    text-align: center;
+    margin: 0;
+  }
 }
 
 .top {
@@ -169,7 +357,7 @@ section {
   color: #fff;
 }
 .top .topbar {
-  background: #222;
+  background: black;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -214,6 +402,40 @@ section {
 .top .topbar__lang-select option {
   color: black;
 }
+@media (max-width: 876px) {
+  .top .topbar {
+    padding: 10px 25px;
+  }
+  .top .topbar__promo {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #FAFAFA;
+    line-height: 1.5;
+    font-weight: 400;
+    white-space: normal;
+  }
+  .top .topbar__promo-link {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #fafafa;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  .top .topbar__lang-select {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: white;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-left: 10px;
+  }
+}
 
 /* Base card placeholder – dùng để extend */
 .best-selling__list .best-selling__card, .flash-sales__carousel .flash-sales__card {
@@ -226,6 +448,11 @@ section {
   text-align: center;
   transition: transform 0.2s;
   max-width: 270px;
+}
+@media (max-width: 876px) {
+  .best-selling__list .best-selling__card, .flash-sales__carousel .flash-sales__card {
+    max-width: 150px;
+  }
 }
 .best-selling__list .best-selling__card:hover, .flash-sales__carousel .flash-sales__card:hover {
   transform: translateY(-4px);
@@ -242,6 +469,12 @@ section {
   padding: 4px 8px;
   border-radius: 6px;
 }
+@media (max-width: 876px) {
+  .best-selling__list .best-selling__card__badge, .flash-sales__carousel .flash-sales__card__badge {
+    padding: 2px 4px;
+    font-size: 8px;
+  }
+}
 
 .best-selling__list .best-selling__card__icons .icon-btn, .flash-sales__carousel .flash-sales__card__icons .icon-btn {
   background: #fff;
@@ -250,6 +483,15 @@ section {
   padding: 5px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 876px) {
+  .best-selling__list .best-selling__card__icons .icon-btn, .flash-sales__carousel .flash-sales__card__icons .icon-btn {
+    padding: 3px;
+  }
+  .best-selling__list .best-selling__card__icons .icon-btn svg, .flash-sales__carousel .flash-sales__card__icons .icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 /* Card image chung */
@@ -281,6 +523,11 @@ section {
 .best-selling__list .best-selling__card__title, .flash-sales__carousel .flash-sales__card__title {
   font-size: 14px;
   margin: 6px 0;
+}
+@media (max-width: 876px) {
+  .best-selling__list .best-selling__card__title, .flash-sales__carousel .flash-sales__card__title {
+    white-space: normal;
+  }
 }
 .best-selling__list .best-selling__card__price, .flash-sales__carousel .flash-sales__card__price {
   font-size: 14px;
@@ -326,13 +573,34 @@ section {
   font-weight: 400;
   border-right: 1px solid #d6d6d6;
 }
+@media (max-width: 876px) {
+  .banner__sidebar {
+    padding: 40px 0 0px 35px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    color: #000000;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+}
 .banner__main {
   padding: 40px 135px 0px 45px;
+  align-self: center;
   flex: 75%;
 }
+@media (max-width: 876px) {
+  .banner__main {
+    padding: 40px 35px 0px 45px;
+  }
+  .banner__main img {
+    height: 200px;
+  }
+}
 .banner__main img {
-  height: 98%;
-  object-fit: scale-down;
+  width: 100%;
+  object-fit: fill;
 }
 
 .flash-sales {
@@ -342,6 +610,11 @@ section {
   display: flex;
   flex-direction: column;
   /* Carousel */
+}
+@media (max-width: 876px) {
+  .flash-sales {
+    padding: 140px 35px 0px 35px;
+  }
 }
 .flash-sales__header {
   display: flex;
@@ -377,6 +650,17 @@ section {
   background: red;
   border-radius: 3px;
 }
+@media (max-width: 876px) {
+  .flash-sales__header__main__text .top {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: red;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+}
 .flash-sales__header__main__text .bottom {
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -386,6 +670,17 @@ section {
   line-height: 1;
   font-weight: 600;
   align-items: flex-end;
+}
+@media (max-width: 876px) {
+  .flash-sales__header__main__text .bottom {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    line-height: 1;
+    font-weight: 600;
+  }
 }
 .flash-sales__header__main__time {
   display: flex;
@@ -402,6 +697,17 @@ section {
   line-height: 1.5;
   font-weight: 500;
 }
+@media (max-width: 876px) {
+  .flash-sales__header__main__time p {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    color: #000000;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+}
 .flash-sales__header__main__time h1 {
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -410,6 +716,17 @@ section {
   color: #000000;
   line-height: 30px;
   font-weight: 700;
+}
+@media (max-width: 876px) {
+  .flash-sales__header__main__time h1 {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1;
+    font-weight: 700;
+  }
 }
 .flash-sales__header__button {
   align-self: flex-end;
@@ -420,6 +737,11 @@ section {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+}
+@media (max-width: 876px) {
+  .flash-sales__header__button button {
+    display: none;
+  }
 }
 .flash-sales__carousel {
   position: relative;
@@ -434,11 +756,21 @@ section {
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
+@media (max-width: 876px) {
+  .flash-sales__carousel .flash-sales__list {
+    scrollbar-width: thin;
+  }
+}
 .flash-sales__carousel .flash-sales__list::-webkit-scrollbar {
   display: none;
 }
 .flash-sales__carousel .flash-sales__card {
   padding: 15px 40px;
+}
+@media (max-width: 876px) {
+  .flash-sales__carousel .flash-sales__card {
+    padding: 0;
+  }
 }
 .flash-sales__carousel .flash-sales__card:hover .flash-sales__card__btn {
   opacity: 1;
@@ -452,6 +784,11 @@ section {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+@media (max-width: 876px) {
+  .flash-sales__carousel .flash-sales__card__icons {
+    gap: 0px;
+  }
 }
 .flash-sales__viewall {
   align-self: center;
@@ -475,6 +812,11 @@ section {
   max-width: 1440px;
   margin: 0px auto;
   flex-direction: column;
+}
+@media (max-width: 876px) {
+  .best-selling {
+    padding: 60px 35px 0px 35px;
+  }
 }
 .best-selling__header {
   display: flex;
@@ -504,6 +846,17 @@ section {
   background: red;
   border-radius: 3px;
 }
+@media (max-width: 876px) {
+  .best-selling__header__main .top {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: red;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+}
 .best-selling__header__main .bottom {
   font-family: "Inter", sans-serif;
   font-style: normal;
@@ -513,6 +866,17 @@ section {
   line-height: 1;
   font-weight: 600;
   align-items: flex-end;
+}
+@media (max-width: 876px) {
+  .best-selling__header__main .bottom {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    line-height: 1;
+    font-weight: 600;
+  }
 }
 .best-selling__header__btn button {
   align-self: flex-end;
@@ -530,6 +894,12 @@ section {
   cursor: pointer;
   border: none;
 }
+@media (max-width: 876px) {
+  .best-selling__header__btn button {
+    padding: 10px 20px;
+    margin-left: 10px;
+  }
+}
 .best-selling__list {
   position: relative;
   width: 100%;
@@ -538,8 +908,22 @@ section {
   justify-content: space-between;
   overflow-x: auto;
 }
+@media (max-width: 876px) {
+  .best-selling__list {
+    scrollbar-width: thin;
+    justify-content: flex-start;
+    gap: 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+}
 .best-selling__list .best-selling__card {
   padding: 35px 40px;
+}
+@media (max-width: 876px) {
+  .best-selling__list .best-selling__card {
+    padding: 0;
+  }
 }
 .best-selling__list .best-selling__card:hover .best-selling__card__btn {
   opacity: 1;
@@ -561,6 +945,11 @@ section {
   display: flex;
   gap: 8px;
 }
+@media (max-width: 876px) {
+  .roadmap {
+    padding: 80px 35px 0 35px;
+  }
+}
 .roadmap a {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -581,10 +970,20 @@ section {
   flex-direction: column;
   gap: 40px;
 }
+@media (max-width: 876px) {
+  .cart__list {
+    padding: 40px 35px;
+  }
+}
 .cart__list .title {
   padding: 24px 40px 0 40px;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 876px) {
+  .cart__list .title {
+    white-space: normal;
+  }
 }
 .cart__list #cart {
   padding: 0px 40px;
@@ -602,6 +1001,11 @@ section {
   align-items: center;
   gap: 10px;
   flex: 31%;
+}
+@media (max-width: 876px) {
+  .cart__list #cart .cart-item .pro-title {
+    white-space: normal;
+  }
 }
 .cart__list #cart .cart-item .pro-price {
   flex: 24%;

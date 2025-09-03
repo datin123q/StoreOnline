@@ -9,13 +9,19 @@
   align-items: center;
   border-bottom: 1px solid #d6d6d6;
   position:sticky;
-  z-index: 10000;
+  z-index: 100;
   top: 0;
-    max-width: 1440px;
+  max-width: 1440px;
   margin: 0px auto;
+  @include abs.respond() {
+          padding: 40px 35px 15px 35px ;
+        }
   &__logo{
     @include abs.font("Inter", 24px, #000000, 1, 700);
     text-decoration: none;
+    @include abs.respond() {
+          font-size: 16px;
+        }
   }
   &__nav{
     display: flex;
@@ -24,15 +30,28 @@
       @include abs.font("Poppins", 16px, #000000, 1.5, 400);
       text-decoration: none;
     }
+    @include abs.respond() {
+          display: none;
+          font-size: 8px;
+        }
   }
   &__actions{
     display: flex;
     align-items: center;
     gap: 25px;
+    @include abs.respond() {
+    gap: 12px;
+    }
     .header__btn{
       border: none;
       background: #ffffff;
       cursor: pointer;
+      @include abs.respond() {
+          svg{
+            width: 15px;
+            height: 15px;
+          }
+        }
     }
     .header__btn--cart{
       position: relative;
@@ -84,6 +103,11 @@
         @include abs.font("Poppins", 12px, #fafafa, 1.5, 400);
         right: 0;
         top: -5px;
+        @include abs.respond() {
+          font-size: 6px;
+          width: 10px;
+          height: 10px;
+        }
       }
       .cart-list{
         display: none;

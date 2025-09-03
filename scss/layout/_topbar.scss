@@ -3,7 +3,7 @@
   background: abs.$color-dark;
     color: abs.$color-light;
   .topbar {
-    background: abs.$color-dark;
+    background: black;
     color: abs.$color-light;
     display: flex;
     justify-content: space-between;
@@ -31,5 +31,21 @@
         color: black;
       }
     }
+      @include abs.respond() {
+        padding: 10px 25px;
+     &__promo {
+      @include abs.font("Poppins", 10px, #FAFAFA, 1.5);
+      white-space: normal;
+
+      &-link {
+        @include abs.font("Poppins", 10px, #fafafa, 1.5);
+      }
+       
+    }     &__lang-select {
+      @include abs.font("Poppins", 10px, white, 1.5);
+      margin-left: 10px;
+    } 
   }
+  }
+
 }

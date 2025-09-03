@@ -12,7 +12,9 @@
   text-align: center;
   transition: transform 0.2s;
   max-width: 270px;
-
+  @include abs.respond() {
+     max-width: 150px;
+  }
   &:hover {
     transform: translateY(-4px);
   }
@@ -28,6 +30,10 @@
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 6px;
+  @include abs.respond() {
+    padding: 2px 4px;
+    font-size: 8px;
+  }
 }
 
 %card-icon-btn {
@@ -37,6 +43,12 @@
   padding: 5px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    @include abs.respond() {
+    padding: 3px;
+    svg{
+    width: 18px;
+    height: 18px;}
+  }
 }
 
 /* Card image chung */
@@ -68,6 +80,9 @@
   &__title {
     font-size: 14px;
     margin: 6px 0;
+    @include abs.respond() {
+         white-space: normal;
+        }
   }
 
   &__price {

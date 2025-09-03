@@ -4,6 +4,9 @@
 
 .best-selling{
     padding: 60px 135px 0 135px;
+    @include abs.respond() {
+          padding: 60px 35px 0px 35px;
+    }
     display: flex;
     max-width: 1440px;
     margin: 0px auto;
@@ -29,11 +32,17 @@
             }
 
             @include abs.font("Poppins", 16px, red, 1.5, 600);
+                      @include abs.respond() {
+          @include abs.font("Poppins", 12px, red, 1.5, 600);
+        }
             }
 
             .bottom {
             @include abs.font("Inter", 36px, #000000, 1.0, 600);
             align-items: flex-end;
+            @include abs.respond() {
+          @include abs.font("Inter", 18px, #000000, 1.0, 600);
+        }
             }
         }
         &__btn{
@@ -46,6 +55,10 @@
                 margin: 45px 0;
                 cursor: pointer;
                 border: none;
+                @include abs.respond() {
+                    padding: 10px 20px;
+                    margin-left: 10px;
+                }
             }            
         }
     }
@@ -56,9 +69,19 @@
         display: flex;
         justify-content: space-between;
         overflow-x: auto;
+        @include abs.respond() {
+          scrollbar-width: thin;
+          justify-content: flex-start;
+          gap: 20px;
+          scroll-behavior: smooth;
+          scrollbar-width: none;
+        }
         .best-selling__card {
             @extend %card;
             padding: 35px 40px;
+            @include abs.respond() {
+         padding: 0;
+        }
 
             &:hover {
             .best-selling__card__btn {

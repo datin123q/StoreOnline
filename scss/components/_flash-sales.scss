@@ -6,6 +6,9 @@
     max-width: 1440px;
   margin: 0px auto;
   padding: 140px 135px 0 135px;
+  @include abs.respond() {
+          padding: 140px 35px 0px 35px;
+    }
   display: flex;
   flex-direction: column;
   &__header {
@@ -37,10 +40,16 @@
           }
 
           @include abs.font("Poppins", 16px, red, 1.5, 600);
+          @include abs.respond() {
+          @include abs.font("Poppins", 12px, red, 1.5, 600);
+        }
         }
 
         .bottom {
           @include abs.font("Inter", 36px, #000000, 1.0, 600);
+          @include abs.respond() {
+          @include abs.font("Inter", 18px, #000000, 1.0, 600);
+        }
           align-items: flex-end;
         }
       }
@@ -53,10 +62,16 @@
 
         p {
           @include abs.font("Poppins", 12px, #000000, 1.5, 500);
+          @include abs.respond() {
+          @include abs.font("Poppins", 8px, #000000, 1.5, 500);
+        }
         }
 
         h1 {
           @include abs.font("Inter", 32px, #000000, 30px, 700);
+          @include abs.respond() {
+          @include abs.font("Inter", 16px, #000000, 1.0, 700);
+        }
         }
       }
     }
@@ -70,6 +85,9 @@
         border-radius: 50%;
         border: none;
         cursor: pointer;
+        @include abs.respond() {
+        display: none;
+        }
       }
     }
   }
@@ -86,6 +104,9 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    @include abs.respond() {
+          scrollbar-width: thin;
+        }
   }
 
   .flash-sales__list::-webkit-scrollbar {
@@ -94,6 +115,9 @@
     .flash-sales__card {
     @extend %card;
     padding: 15px 40px;
+    @include abs.respond() {
+          padding: 0;
+        }
 
     &:hover {
       .flash-sales__card__btn {
@@ -113,7 +137,9 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-
+      @include abs.respond() {
+        gap: 0px;
+  }
       .icon-btn {
         @extend %card-icon-btn;
       }

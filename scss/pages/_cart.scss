@@ -2,7 +2,10 @@
 
 .roadmap{
     padding: 80px 135px 0 135px;
-      max-width: 1440px;
+    max-width: 1440px;
+    @include abs.respond() {
+        padding: 80px 35px 0 35px;
+    }
   margin: 0px auto;
     display: flex;
     gap: 8px;
@@ -14,16 +17,22 @@
     
 }
 .cart__list{
-      max-width: 1440px;
+    max-width: 1440px;
   margin: 0px auto;
     padding: 40px 135px;
     display: flex;
     flex-direction: column;
     gap: 40px;
+        @include abs.respond() {
+        padding: 40px 35px;
+    }
     .title{
         padding: 24px 40px 0 40px;
         display: flex;
         justify-content: space-between;
+            @include abs.respond() {
+        white-space: normal;
+    }
     }
     #cart{
         padding: 0px 40px;
@@ -38,7 +47,10 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
-                flex: 31%
+                flex: 31%;
+    @include abs.respond() {
+        white-space: normal;
+    }
             }
             .pro-price{
                 flex: 24%;

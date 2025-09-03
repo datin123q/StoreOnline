@@ -13,3 +13,6 @@
     line-height: $lh;    
     font-weight: $fw;
 }
+@mixin respond() {
+    @media (max-width: 876px) { @content; }
+}

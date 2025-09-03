@@ -1,8 +1,121 @@
-@use "../abstracts" as *;
-
-.footer {
-  background: $color-dark;
-  color: $color-light;
+@use '../abstracts' as abs;
+footer{
   text-align: center;
-  padding: 1rem;
+  background: black;
+  color: white;
+  padding-bottom: 25px;
+  .footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 54px 80px;
+  display: flex;
+  justify-content: space-between;
+  
+  @include abs.respond() {
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 30px;
+    align-items: baseline
+  }
+
+
+  &-address{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+      &__logo{
+        @include abs.font('Clash Display' ,36PX , white,1.4);
+      }
+      &__address{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        p{
+          @include abs.font('Satoshi' ,14PX , white,19px);
+          text-align: left;
+        }
+      }
+    }
+    &-social{
+              display: flex;
+        flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 20px;
+      &__title{
+        @include abs.font('Clash Display' ,16PX , white,20px);
+      }
+      &__icon{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 24px;
+        @include abs.respond() {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 24px;
+          row-gap: 24px;
+        }
+      }
+    }
+    &-menu, &-category, &-company{
+              display: flex;
+        flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 12px;
+      p{
+        @include abs.font('Satoshi' ,14PX , white,20px);
+        text-align: left;
+      }
+      p:nth-child(1){
+        @include abs.font('Clash Display' ,16PX , white,19px);
+      }
+    }
+    @include abs.respond() {
+      &-category{
+      display: none;
+    }
+      &-menu{
+        order: 1;
+      }
+      &-social{
+        order: 2;
+        margin-left: 10px;
+      }
+      &-company{
+        order: 3;
+      }
+      &-menu{
+        order: 4;
+        margin-left: 10px;
+      }
+  }
+}
+.footer-unline{
+    max-width: 1440px;
+  margin: 0 auto;
+  .line{
+  margin: 0PX 80px 25px 80px;
+  height: 1px;
+  background: #4E4D93;
+  width: calc(100% - 160px);
+  @include abs.respond() {
+    margin: 0PX 24px 20px 24px;
+    width: calc(100% - 48px);
+  }
+}
+  p{
+    margin-left: 80px;
+    text-align: left;
+    background: #2A254B;
+    @include abs.font('Satoshi' ,14PX , white,19px);
+    @include abs.respond() {text-align: center; margin: 0;}
+  }
+}
 }
