@@ -18,6 +18,9 @@ body {
   min-height: 100vh;
   background: white;
   margin: 0;
+}
+
+body {
   overflow-x: hidden;
 }
 
