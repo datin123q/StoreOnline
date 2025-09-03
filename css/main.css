@@ -359,6 +359,7 @@ section {
   display: flex;
   align-items: center;
   gap: 20px;
+  background: white;
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -485,6 +486,7 @@ section {
   display: flex;
   align-items: center;
   gap: 20px;
+  background: white;
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
