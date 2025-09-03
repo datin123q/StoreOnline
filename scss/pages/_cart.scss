@@ -2,6 +2,8 @@
 
 .roadmap{
     padding: 80px 135px 0 135px;
+      max-width: 1440px;
+  margin: 0px auto;
     display: flex;
     gap: 8px;
     a{
@@ -12,6 +14,8 @@
     
 }
 .cart__list{
+      max-width: 1440px;
+  margin: 0px auto;
     padding: 40px 135px;
     display: flex;
     flex-direction: column;
