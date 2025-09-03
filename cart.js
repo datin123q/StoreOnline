@@ -31,7 +31,6 @@ function renderCart() {
           <input type="number" value="${item.number}" name="quantity" min="0" max="50">
         </div>
         <div class="pro-total">$${subtotal}</div>
-        <button onclick="removeFromCart(${index})">x</button>
       </div>
     `;
 
