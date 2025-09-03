@@ -5,6 +5,8 @@
 .best-selling{
     padding: 60px 135px 0 135px;
     display: flex;
+      max-width: 1440px;
+  margin: 0px auto;
     flex-direction: column;
     &__header{
         display: flex;

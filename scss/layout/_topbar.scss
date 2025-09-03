@@ -1,31 +1,35 @@
 @use "../abstracts" as abs;
-
-.topbar {
+.top{
   background: abs.$color-dark;
-  color: abs.$color-light;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 135px;
+    color: abs.$color-light;
+  .topbar {
+    background: abs.$color-dark;
+    color: abs.$color-light;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 135px;
+    max-width: 1440px;
+    margin: 0px auto;
+    &__promo {
+      @include abs.font("Poppins", 14px, #FAFAFA, 1.5);
 
-  &__promo {
-    @include abs.font("Poppins", 14px, #FAFAFA, 1.5);
-
-    &-link {
-      @include abs.font("Poppins", 14px, #fafafa, 1.5);
-      text-decoration: underline;
-      font-weight: bold;
+      &-link {
+        @include abs.font("Poppins", 14px, #fafafa, 1.5);
+        text-decoration: underline;
+        font-weight: bold;
+      }
     }
-  }
 
-  &__lang-select {
-    @include abs.font("Poppins", 14px, abs.$color-light, 1.5);
-    background: transparent;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-    option{
-      color: black;
+    &__lang-select {
+      @include abs.font("Poppins", 14px, abs.$color-light, 1.5);
+      background: transparent;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      option{
+        color: black;
+      }
     }
   }
 }

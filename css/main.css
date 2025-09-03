@@ -37,6 +37,8 @@ section {
   position: sticky;
   z-index: 1000;
   top: 0;
+  max-width: 1440px;
+  margin: 0px auto;
 }
 .header__logo {
   font-family: "Inter", sans-serif;
@@ -159,15 +161,21 @@ section {
   padding: 1rem;
 }
 
-.topbar {
+.top {
+  background: #222;
+  color: #fff;
+}
+.top .topbar {
   background: #222;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 135px;
+  max-width: 1440px;
+  margin: 0px auto;
 }
-.topbar__promo {
+.top .topbar__promo {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -176,7 +184,7 @@ section {
   line-height: 1.5;
   font-weight: 400;
 }
-.topbar__promo-link {
+.top .topbar__promo-link {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -187,7 +195,7 @@ section {
   text-decoration: underline;
   font-weight: bold;
 }
-.topbar__lang-select {
+.top .topbar__lang-select {
   font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -200,7 +208,7 @@ section {
   color: inherit;
   cursor: pointer;
 }
-.topbar__lang-select option {
+.top .topbar__lang-select option {
   color: black;
 }
 
@@ -295,6 +303,8 @@ section {
 
 .banner {
   display: flex;
+  max-width: 1440px;
+  margin: 0px auto;
 }
 .banner__sidebar {
   padding: 40px 0 0px 135px;
@@ -318,11 +328,13 @@ section {
   flex: 75%;
 }
 .banner__main img {
-  height: 100%;
+  height: 98%;
   object-fit: scale-down;
 }
 
 .flash-sales {
+  max-width: 1440px;
+  margin: 0px auto;
   padding: 140px 135px 0 135px;
   display: flex;
   flex-direction: column;
@@ -456,6 +468,8 @@ section {
 .best-selling {
   padding: 60px 135px 0 135px;
   display: flex;
+  max-width: 1440px;
+  margin: 0px auto;
   flex-direction: column;
 }
 .best-selling__header {

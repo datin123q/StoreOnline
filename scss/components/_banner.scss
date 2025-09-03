@@ -2,6 +2,8 @@
 
 .banner{
     display: flex;
+    max-width: 1440px;
+    margin: 0px auto;
     &__sidebar{
         padding: 40px 0 0px 135px;
         flex: 25%;
@@ -17,7 +19,7 @@
         padding: 40px 135px 0px 45px;
         flex: 75%;
         img{
-            height: 100%;
+            height: 98%;
             object-fit: scale-down;
         }
     }

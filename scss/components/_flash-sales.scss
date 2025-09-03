@@ -3,6 +3,8 @@
 @use "./button";
 
 .flash-sales {
+    max-width: 1440px;
+  margin: 0px auto;
   padding: 140px 135px 0 135px;
   display: flex;
   flex-direction: column;
