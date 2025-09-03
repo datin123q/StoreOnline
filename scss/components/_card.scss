@@ -1,0 +1,99 @@
+@use "../abstracts" as abs;
+
+
+/* Base card placeholder – dùng để extend */
+%card {
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  flex-shrink: 0;
+  text-align: center;
+  transition: transform 0.2s;
+  max-width: 270px;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Badge chung */
+%card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e63946;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+%card-icon-btn {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card image chung */
+%card-image {
+  width: 100%;
+}
+
+%card-btn {
+  display: block;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+/* Info chung */
+%card-info {
+  text-align: left;
+  &__title {
+    font-size: 14px;
+    margin: 6px 0;
+  }
+
+  &__price {
+    font-size: 14px;
+
+    .price-new {
+      color: #e63946;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+
+    .price-old {
+      color: #aaa;
+      text-decoration: line-through;
+    }
+  }
+
+  &__rating {
+    font-size: 13px;
+    color: #f4a261;
+
+    span {
+      color: #888;
+      font-size: 12px;
+      margin-left: 4px;
+    }
+  }
+}
+

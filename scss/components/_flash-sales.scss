@@ -1,0 +1,146 @@
+@use "../abstracts" as abs;
+@use "./card" ;
+@use "./button";
+
+.flash-sales {
+  padding: 140px 135px 0 135px;
+  display: flex;
+  flex-direction: column;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+
+    &__main {
+      display: flex;
+      width: 600px;
+      justify-content: space-between;
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .top {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          .red {
+            width: 20px;
+            height: 40px;
+            background: red;
+            border-radius: 3px;
+          }
+
+          @include abs.font("Poppins", 16px, red, 1.5, 600);
+        }
+
+        .bottom {
+          @include abs.font("Inter", 36px, #000000, 1.0, 600);
+          align-items: flex-end;
+        }
+      }
+
+      &__time {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        align-self: flex-end;
+
+        p {
+          @include abs.font("Poppins", 12px, #000000, 1.5, 500);
+        }
+
+        h1 {
+          @include abs.font("Inter", 32px, #000000, 30px, 700);
+        }
+      }
+    }
+
+    &__button {
+      align-self: flex-end;
+
+      button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  /* Carousel */
+  &__carousel {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    .flash-sales__list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .flash-sales__list::-webkit-scrollbar {
+    display: none;
+  }
+    .flash-sales__card {
+    @extend %card;
+    padding: 15px 40px;
+
+    &:hover {
+      .flash-sales__card__btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+    &__badge {
+      @extend %card-badge;
+    }
+
+    &__icons {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .icon-btn {
+        @extend %card-icon-btn;
+      }
+    }
+
+    &__image {
+      @extend %card-image;
+    }
+
+    &__btn {
+      @extend %card-btn;
+    }
+
+    &__info {
+      @extend %card-info;
+    }
+    &__title { @extend %card-info__title; }
+    &__price { @extend %card-info__price; }
+    &__rating { @extend %card-info__rating; }
+  }
+  }
+  &__viewall{
+    align-self: center;
+    padding: 10px 40px;
+    @include abs.font('Poppins' ,16PX , #fafafa,1.5 ,500);
+    background: #DB4444;
+    border-radius: 5px;
+    margin: 45px 0;
+    cursor: pointer;
+  }
+
+}
+

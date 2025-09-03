@@ -1,0 +1,13 @@
+
+@use "../abstracts" as *;
+
+%button {
+  display: inline-flex; 
+  width: auto !important; 
+  padding: 8px 20px;
+  background: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -1,0 +1,115 @@
+@use "../abstracts" as abs;
+
+.header {
+  background: abs.$color-light;
+  color: abs.$color-dark;
+  padding: 40px 135px 15px 135px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d6d6d6;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  &__logo{
+    @include abs.font("Inter", 24px, #000000, 1, 700);
+    text-decoration: none;
+  }
+  &__nav{
+    display: flex;
+    gap: 48px;
+    a{
+      @include abs.font("Poppins", 16px, #000000, 1.5, 400);
+      text-decoration: none;
+    }
+  }
+  &__actions{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    .header__btn{
+      border: none;
+      background: #ffffff;
+      cursor: pointer;
+    }
+    .header__btn--cart{
+      position: relative;
+      .cart-dropdown {
+        display: none;
+        position: absolute;
+        top: 120%;
+        right: 0;
+        width: 280px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        padding: 10px;
+        z-index: 100;
+      &__items {
+        max-height: 200px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        margin-right: 8px;
+        border-radius: 4px;
+        }
+      }
+      &__item{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      }
+      &:hover .cart-dropdown {
+        display: block;
+      }
+      .quantity{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: #DB4444;
+        border-radius: 50%;
+        text-align: center;
+        @include abs.font("Poppins", 12px, #fafafa, 1.5, 400);
+        right: 0;
+        top: -5px;
+      }
+      .cart-list{
+        display: none;
+        width: 200px;
+        height: 350px;
+      }
+    }
+    &__searchbox{
+      display: flex;
+      align-items: center;
+      background: #f5f5f5;
+      input{
+        border: none;
+        outline: none;
+        padding: 8px 15px;
+        background: transparent;
+      }
+      button{
+        cursor: pointer;
+        border: none;
+        padding-right: 15px;
+      }
+    }
+    
+  }
+}
+
+
+
+
+

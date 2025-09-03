@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Exclusive</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="topbar">
+        <div></div>
+        <p class="topbar__promo">
+            Summer Sale For All Swim Suits And Free Express Delivery – OFF 50%! 
+            <a href="#" class="topbar__promo-link">ShopNow</a>
+        </p>
+        <div class="topbar__lang">
+            <select class="topbar__lang-select">
+            <option value="en">English</option>
+            <option value="vi">Tiếng Việt</option>
+            </select>
+        </div>
+    </div>
+  <!--  Header -->
+  <header class="header">
+      <a class="header__logo" href="index.html">Exclusive</a>
+      <nav class="header__nav">
+          <a class="nav__item" href="index.html" class="nav__link">Home</a>
+          <a class="nav__item" href="#" class="nav__link">Contact</a>
+          <a class="nav__item" href="#" class="nav__link">About</a>
+          <a class="nav__item" href="#" class="nav__link">Sign Up</a>
+      </nav>
+      <div class="header__actions">
+        <div class="header__actions__searchbox">
+            <input type="text" class="header__search" placeholder="What are you looking for?">
+            <button class="header__btn--search">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 17L13.2223 13.2156M15.3158 8.15789C15.3158 10.0563 14.5617 11.8769 13.2193 13.2193C11.8769 14.5617 10.0563 15.3158 8.15789 15.3158C6.2595 15.3158 4.43886 14.5617 3.0965 13.2193C1.75413 11.8769 1 10.0563 1 8.15789C1 6.2595 1.75413 4.43886 3.0965 3.0965C4.43886 1.75413 6.2595 1 8.15789 1C10.0563 1 11.8769 1.75413 13.2193 3.0965C14.5617 4.43886 15.3158 6.2595 15.3158 8.15789V8.15789Z" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        <button class="header__btn header__btn--wishlist">
+            <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 1C3.239 1 1 3.216 1 5.95C1 8.157 1.875 13.395 10.488 18.69C10.6423 18.7839 10.8194 18.8335 11 18.8335C11.1806 18.8335 11.3577 18.7839 11.512 18.69C20.125 13.395 21 8.157 21 5.95C21 3.216 18.761 1 16 1C13.239 1 11 4 11 4C11 4 8.761 1 6 1Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="header__btn header__btn--cart">
+            <div class="quantity" id="cart-count">0</div>
+            <svg width="25" height="25" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 27C11.5523 27 12 26.5523 12 26C12 25.4477 11.5523 25 11 25C10.4477 25 10 25.4477 10 26C10 26.5523 10.4477 27 11 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25 27C25.5523 27 26 26.5523 26 26C26 25.4477 25.5523 25 25 25C24.4477 25 24 25.4477 24 26C24 26.5523 24.4477 27 25 27Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 5H7L10 22H26" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 16.6667H25.59C25.7056 16.6667 25.8177 16.6267 25.9072 16.5535C25.9966 16.4802 26.0579 16.3782 26.0806 16.2648L27.8806 7.26479C27.8951 7.19222 27.8934 7.11733 27.8755 7.04552C27.8575 6.97371 27.8239 6.90678 27.7769 6.84956C27.73 6.79234 27.6709 6.74625 27.604 6.71462C27.5371 6.68299 27.464 6.66661 27.39 6.66666H8" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="cart-dropdown">
+                <div class="cart-dropdown__items"></div>
+                <div class="cart-dropdown__footer">
+                <strong>Total: <span id="dropdown-total">$0</span></strong>
+                </div>
+            </div>
+        </button>
+    </div>
+  </header>
+
+  <!-- 🖼 Banner -->
+  <section class="banner">
+    <div class="banner__sidebar">
+        <a class="banner__sidebar__item">Woman's Fashion</a>
+        <a class="banner__sidebar__item">Men's Fashion</a>
+        <a class="banner__sidebar__item">Electronics</a>
+        <a class="banner__sidebar__item">Home & Lifestyle</a>
+        <a class="banner__sidebar__item">Medicine</a>
+        <a class="banner__sidebar__item">Sports & Outdoor</a>
+        <a class="banner__sidebar__item">Baby's & Toys</a>
+        <a class="banner__sidebar__item">Groceries & Pets</a>
+        <a class="banner__sidebar__item">Health & Beauty</a>
+    </div>
+
+    <div class="banner__main">
+        <img src="assets/iphone.png" alt="iPhone 14">
+    </div>
+  </section>
+
+  <!-- ⚡ Flash Sales -->
+  <section class="flash-sales container">
+    <div class="flash-sales__header">
+      <div class="flash-sales__header__main">
+        <div class="flash-sales__header__main__text">
+          <div class="top">
+            <div class="red"></div>
+            <p>Today's</p>
+          </div>
+          <p class="bottom">Flash Sale</p>
+        </div>
+        <div class="flash-sales__header__main__time">
+          <div class="days">
+            <p>Days</p>
+            <h1>03</h1>
+          </div>
+
+          <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="2" cy="2" r="2" fill="#E07575"/>
+            <circle cx="2" cy="14" r="2" fill="#E07575"/>
+          </svg>
+
+          <div class="days">
+            <p>Hours</p>
+            <h1>23</h1>
+          </div>
+
+          <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="2" cy="2" r="2" fill="#E07575"/>
+            <circle cx="2" cy="14" r="2" fill="#E07575"/>
+          </svg><div class="days">
+            <p>Minutes</p>
+            <h1>19</h1>
+          </div>
+
+          <svg width="4" height="16" viewBox="0 0 4 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="2" cy="2" r="2" fill="#E07575"/>
+            <circle cx="2" cy="14" r="2" fill="#E07575"/>
+          </svg><div class="days">
+            <p>Seconds</p>
+            <h1>56</h1>
+          </div>
+        </div>
+      </div>
+      <div class="flash-sales__header__button">
+        <button class="carousel-btn left">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 5L4 12L11 19M4 12H20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="carousel-btn right">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 12H20M20 12L13 5M20 12L13 19" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="flash-sales__carousel">  
+    <div class="flash-sales__list">
+      <div class="flash-sales__card">
+        <div class="flash-sales__card__badge">-40%</div>
+        <div class="flash-sales__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/flashsale/gamepad.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="flash-sales__card__btn">Add To Cart</button>
+        <div class="flash-sales__card__info">
+          <h3 class="flash-sales__card__title">HAVIT HV-G92 Gamepad</h3>
+          <p class="flash-sales__card__price">
+            <span class="price-new">$120</span>
+            <span class="price-old">$160</span>
+          </p>
+          <div class="flash-sales__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+      <div class="flash-sales__card">
+        <div class="flash-sales__card__badge">-35%</div>
+        <div class="flash-sales__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/flashsale/keyboard.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="flash-sales__card__btn">Add To Cart</button>
+        <div class="flash-sales__card__info">
+          <h3 class="flash-sales__card__title">AK-900 Wired Keyboard</h3>
+          <p class="flash-sales__card__price">
+            <span class="price-new">$960</span>
+            <span class="price-old">$1160</span>
+          </p>
+          <div class="flash-sales__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+      <div class="flash-sales__card">
+        <div class="flash-sales__card__badge">-30%</div>
+        <div class="flash-sales__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/flashsale/tv.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="flash-sales__card__btn">Add To Cart</button>
+        <div class="flash-sales__card__info">
+          <h3 class="flash-sales__card__title">IPS LCD Gaming Monitor</h3>
+          <p class="flash-sales__card__price">
+            <span class="price-new">$370</span>
+            <span class="price-old">$400</span>
+          </p>
+          <div class="flash-sales__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+      <div class="flash-sales__card">
+        <div class="flash-sales__card__badge">-25%</div>
+        <div class="flash-sales__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/flashsale/chair.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="flash-sales__card__btn">Add To Cart</button>
+        <div class="flash-sales__card__info">
+          <h3 class="flash-sales__card__title">S-Series Comfort Chair </h3>
+          <p class="flash-sales__card__price">
+            <span class="price-new">$375</span>
+            <span class="price-old">$400</span>
+          </p>
+          <div class="flash-sales__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+      <div class="flash-sales__card">
+        <div class="flash-sales__card__badge">-25%</div>
+        <div class="flash-sales__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/flashsale/chair.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="flash-sales__card__btn">Add To Cart</button>
+        <div class="flash-sales__card__info">
+          <h3 class="flash-sales__card__title">S-Series Comfort Chair </h3>
+          <p class="flash-sales__card__price">
+            <span class="price-new">$375</span>
+            <span class="price-old">$400</span>
+          </p>
+          <div class="flash-sales__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="flash-sales__viewall">View All Products</div>
+    
+  </section>
+  <section class="best-selling">
+    <div class="best-selling__header">
+      <div class="best-selling__header__main">
+        <div class="top">
+          <div class="red"></div>
+          <p>This Month</p>
+        </div>
+        <p class="bottom">Best Selling Products</p>
+      </div>
+      <div class="best-selling__header__btn">
+        <button>View All</button>
+      </div>
+    </div>
+    <div class="best-selling__list">
+      <div class="best-selling__card">
+        <div class="best-selling__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/bestsell/coat.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="best-selling__card__btn">Add To Cart</button>
+        <div class="best-selling__card__info">
+          <h3 class="best-selling__card__title">The north coat</h3>
+          <p class="best-selling__card__price">
+            <span class="price-new">$260</span>
+            <span class="price-old">$360</span>
+          </p>
+          <div class="best-selling__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+      <div class="best-selling__card">
+        <div class="best-selling__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/bestsell/bag.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="best-selling__card__btn">Add To Cart</button>
+        <div class="best-selling__card__info">
+          <h3 class="best-selling__card__title">Gucci duffle bag</h3>
+          <p class="best-selling__card__price">
+            <span class="price-new">$960</span>
+            <span class="price-old">$1160</span>
+          </p>
+          <div class="best-selling__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+            <div class="best-selling__card">
+        <div class="best-selling__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/bestsell/cooler.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="best-selling__card__btn">Add To Cart</button>
+        <div class="best-selling__card__info">
+          <h3 class="best-selling__card__title">RGB liquid CPU Cooler</h3>
+          <p class="best-selling__card__price">
+            <span class="price-new">$160</span>
+            <span class="price-old">$170</span>
+          </p>
+          <div class="best-selling__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+            <div class="best-selling__card">
+        <div class="best-selling__card__icons">
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 5C5.7912 5 4 6.73964 4 8.88594C4 10.6185 4.7 14.7305 11.5904 18.8873C11.7138 18.961 11.8555 19 12 19C12.1445 19 12.2862 18.961 12.4096 18.8873C19.3 14.7305 20 10.6185 20 8.88594C20 6.73964 18.2088 5 16 5C13.7912 5 12 7.35511 12 7.35511C12 7.35511 10.2088 5 8 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.257 10.962C21.731 11.582 21.731 12.419 21.257 13.038C19.764 14.987 16.182 19 12 19C7.81801 19 4.23601 14.987 2.74301 13.038C2.51239 12.7411 2.38721 12.3759 2.38721 12C2.38721 11.6241 2.51239 11.2589 2.74301 10.962C4.23601 9.013 7.81801 5 12 5C16.182 5 19.764 9.013 21.257 10.962V10.962Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          </button>
+        </div>
+        <img src="assets/bestsell/bookself.png" alt="AK-900 Keyboard" class="flash-sales__card__image">
+        <button class="best-selling__card__btn">Add To Cart</button>
+        <div class="best-selling__card__info">
+          <h3 class="best-selling__card__title">Small BookSelf</h3>
+          <p class="best-selling__card__price">
+            <span class="price-new">$360</span>
+          </p>
+          <div class="best-selling__card__rating">★★★★☆ <span>(75)</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🔻 Footer -->
+  <footer class="footer">
+    <p>© 2025 Exclusive Shop. All rights reserved.</p>
+  </footer>
+<script src="script.js"></script>
+
+
+</body>
+</html>

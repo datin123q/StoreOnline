@@ -1,0 +1,601 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+}
+
+.header {
+  background: #fff;
+  color: #222;
+  padding: 40px 135px 15px 135px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d6d6d6;
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+}
+.header__logo {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: #000000;
+  line-height: 1;
+  font-weight: 700;
+  text-decoration: none;
+}
+.header__nav {
+  display: flex;
+  gap: 48px;
+}
+.header__nav a {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.5;
+  font-weight: 400;
+  text-decoration: none;
+}
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.header__actions .header__btn {
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+}
+.header__actions .header__btn--cart {
+  position: relative;
+}
+.header__actions .header__btn--cart .cart-dropdown {
+  display: none;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 280px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  z-index: 100;
+}
+.header__actions .header__btn--cart .cart-dropdown__items {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.header__actions .header__btn--cart .cart-dropdown__items img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+.header__actions .header__btn--cart .cart-dropdown__item {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__actions .header__btn--cart:hover .cart-dropdown {
+  display: block;
+}
+.header__actions .header__btn--cart .quantity {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #DB4444;
+  border-radius: 50%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #fafafa;
+  line-height: 1.5;
+  font-weight: 400;
+  right: 0;
+  top: -5px;
+}
+.header__actions .header__btn--cart .cart-list {
+  display: none;
+  width: 200px;
+  height: 350px;
+}
+.header__actions__searchbox {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+}
+.header__actions__searchbox input {
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+  background: transparent;
+}
+.header__actions__searchbox button {
+  cursor: pointer;
+  border: none;
+  padding-right: 15px;
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.topbar {
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 135px;
+}
+.topbar__promo {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FAFAFA;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.topbar__promo-link {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fafafa;
+  line-height: 1.5;
+  font-weight: 400;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.topbar__lang-select {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.5;
+  font-weight: 400;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+.topbar__lang-select option {
+  color: black;
+}
+
+/* Base card placeholder – dùng để extend */
+.best-selling__list .best-selling__card, .flash-sales__carousel .flash-sales__card {
+  position: relative;
+  background: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  flex-shrink: 0;
+  text-align: center;
+  transition: transform 0.2s;
+  max-width: 270px;
+}
+.best-selling__list .best-selling__card:hover, .flash-sales__carousel .flash-sales__card:hover {
+  transform: translateY(-4px);
+}
+
+/* Badge chung */
+.best-selling__list .best-selling__card__badge, .flash-sales__carousel .flash-sales__card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e63946;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.best-selling__list .best-selling__card__icons .icon-btn, .flash-sales__carousel .flash-sales__card__icons .icon-btn {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card image chung */
+.best-selling__list .best-selling__card__image, .flash-sales__carousel .flash-sales__card__image {
+  width: 100%;
+}
+
+.best-selling__list .best-selling__card__btn, .flash-sales__carousel .flash-sales__card__btn {
+  display: block;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+/* Info chung */
+.best-selling__list .best-selling__card__info, .flash-sales__carousel .flash-sales__card__info {
+  text-align: left;
+}
+.best-selling__list .best-selling__card__title, .flash-sales__carousel .flash-sales__card__title {
+  font-size: 14px;
+  margin: 6px 0;
+}
+.best-selling__list .best-selling__card__price, .flash-sales__carousel .flash-sales__card__price {
+  font-size: 14px;
+}
+.best-selling__list .best-selling__card__price .price-new, .flash-sales__carousel .flash-sales__card__price .price-new {
+  color: #e63946;
+  font-weight: bold;
+  margin-right: 6px;
+}
+.best-selling__list .best-selling__card__price .price-old, .flash-sales__carousel .flash-sales__card__price .price-old {
+  color: #aaa;
+  text-decoration: line-through;
+}
+.best-selling__list .best-selling__card__rating, .flash-sales__carousel .flash-sales__card__rating {
+  font-size: 13px;
+  color: #f4a261;
+}
+.best-selling__list .best-selling__card__rating span, .flash-sales__carousel .flash-sales__card__rating span {
+  color: #888;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.banner {
+  display: flex;
+}
+.banner__sidebar {
+  padding: 40px 0 0px 135px;
+  flex: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.5;
+  font-weight: 400;
+  border-right: 1px solid #d6d6d6;
+}
+.banner__main {
+  padding: 40px 135px 0px 45px;
+  flex: 75%;
+}
+.banner__main img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.flash-sales {
+  padding: 140px 135px 0 135px;
+  display: flex;
+  flex-direction: column;
+  /* Carousel */
+}
+.flash-sales__header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.flash-sales__header__main {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+}
+.flash-sales__header__main__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.flash-sales__header__main__text .top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: red;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.flash-sales__header__main__text .top .red {
+  width: 20px;
+  height: 40px;
+  background: red;
+  border-radius: 3px;
+}
+.flash-sales__header__main__text .bottom {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #000000;
+  line-height: 1;
+  font-weight: 600;
+  align-items: flex-end;
+}
+.flash-sales__header__main__time {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  align-self: flex-end;
+}
+.flash-sales__header__main__time p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #000000;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.flash-sales__header__main__time h1 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  color: #000000;
+  line-height: 30px;
+  font-weight: 700;
+}
+.flash-sales__header__button {
+  align-self: flex-end;
+}
+.flash-sales__header__button button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+.flash-sales__carousel {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.flash-sales__carousel .flash-sales__list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.flash-sales__carousel .flash-sales__list::-webkit-scrollbar {
+  display: none;
+}
+.flash-sales__carousel .flash-sales__card {
+  padding: 15px 40px;
+}
+.flash-sales__carousel .flash-sales__card:hover .flash-sales__card__btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.flash-sales__carousel .flash-sales__card__icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.flash-sales__viewall {
+  align-self: center;
+  padding: 10px 40px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16PX;
+  color: #fafafa;
+  line-height: 1.5;
+  font-weight: 500;
+  background: #DB4444;
+  border-radius: 5px;
+  margin: 45px 0;
+  cursor: pointer;
+}
+
+.best-selling {
+  padding: 60px 135px 0 135px;
+  display: flex;
+  flex-direction: column;
+}
+.best-selling__header {
+  display: flex;
+  justify-content: space-between;
+}
+.best-selling__header__main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.best-selling__header__main .top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: red;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.best-selling__header__main .top .red {
+  width: 20px;
+  height: 40px;
+  background: red;
+  border-radius: 3px;
+}
+.best-selling__header__main .bottom {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: #000000;
+  line-height: 1;
+  font-weight: 600;
+  align-items: flex-end;
+}
+.best-selling__header__btn button {
+  align-self: flex-end;
+  padding: 10px 40px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16PX;
+  color: #fafafa;
+  line-height: 1.5;
+  font-weight: 500;
+  background: #DB4444;
+  border-radius: 5px;
+  margin: 45px 0;
+  cursor: pointer;
+  border: none;
+}
+.best-selling__list {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+.best-selling__list .best-selling__card {
+  padding: 35px 40px;
+}
+.best-selling__list .best-selling__card:hover .best-selling__card__btn {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.best-selling__list .best-selling__card__icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.roadmap {
+  padding: 80px 135px 0 135px;
+  display: flex;
+  gap: 8px;
+}
+.roadmap a {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.5;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart__list {
+  padding: 40px 135px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.cart__list .title {
+  padding: 24px 40px 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.cart__list #cart {
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.cart__list #cart .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart__list #cart .cart-item .pro-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 31%;
+}
+.cart__list #cart .cart-item .pro-price {
+  flex: 24%;
+}
+.cart__list #cart .cart-item .pro-quantity {
+  flex: 15%;
+  text-align: center;
+}
+.cart__list #cart .cart-item .pro-quantity input {
+  text-align: center;
+}
+.cart__list #cart .cart-item .pro-total {
+  flex: 25%;
+  text-align: end;
+}
+
+.cart-total {
+  text-align: right;
+}
+
+.updatecart {
+  padding: 0 135px;
+  text-align: end;
+}
+.updatecart button {
+  padding: 20px 40px;
+  border-radius: 0%;
+  background: white;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

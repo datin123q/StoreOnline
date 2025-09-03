@@ -1,0 +1,100 @@
+@use "../abstracts" as abs;
+@use "./card" ;
+@use "./button";
+
+.best-selling{
+    padding: 60px 135px 0 135px;
+    display: flex;
+    flex-direction: column;
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        &__main{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .top {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .red {
+                width: 20px;
+                height: 40px;
+                background: red;
+                border-radius: 3px;
+            }
+
+            @include abs.font("Poppins", 16px, red, 1.5, 600);
+            }
+
+            .bottom {
+            @include abs.font("Inter", 36px, #000000, 1.0, 600);
+            align-items: flex-end;
+            }
+        }
+        &__btn{
+            button{
+                align-self: flex-end;
+                padding: 10px 40px;
+                @include abs.font('Poppins' ,16PX , #fafafa,1.5 ,500);
+                background: #DB4444;
+                border-radius: 5px;
+                margin: 45px 0;
+                cursor: pointer;
+                border: none;
+            }            
+        }
+    }
+    &__list{
+        position: relative;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        overflow-x: auto;
+        .best-selling__card {
+            @extend %card;
+            padding: 35px 40px;
+
+            &:hover {
+            .best-selling__card__btn {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            }
+            &__badge {
+            @extend %card-badge;
+            }
+
+            &__icons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .icon-btn {
+                @extend %card-icon-btn;
+            }
+            }
+
+            &__image {
+            @extend %card-image;
+            }
+
+            &__btn {
+            @extend %card-btn;
+            }
+
+            &__info {
+            @extend %card-info;
+            }
+            &__title { @extend %card-info__title; }
+            &__price { @extend %card-info__price; }
+            &__rating { @extend %card-info__rating; }
+        }
+    }
+}

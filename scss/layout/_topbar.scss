@@ -1,0 +1,31 @@
+@use "../abstracts" as abs;
+
+.topbar {
+  background: abs.$color-dark;
+  color: abs.$color-light;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 135px;
+
+  &__promo {
+    @include abs.font("Poppins", 14px, #FAFAFA, 1.5);
+
+    &-link {
+      @include abs.font("Poppins", 14px, #fafafa, 1.5);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+
+  &__lang-select {
+    @include abs.font("Poppins", 14px, abs.$color-light, 1.5);
+    background: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    option{
+      color: black;
+    }
+  }
+}
