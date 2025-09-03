@@ -1,6 +1,6 @@
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("cart-count").textContent =  cart.reduce( ((a,b) => a + b.quantity), 0);;
+  document.getElementById("cart-count").textContent =  cart.reduce( ((a,b) => a + b.number), 0);;
   console.log(cart);
 }
 
@@ -17,7 +17,7 @@ function renderCart() {
 
   cart.forEach((item, index) => {
     const priceNumber = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
-    const subtotal = priceNumber * item.quantity;
+    const subtotal = priceNumber * item.number;
     total += subtotal;
 
     cartContainer.innerHTML += `
@@ -28,7 +28,7 @@ function renderCart() {
         </div>
         <span class="pro-price">${item.price}</span>
         <div class="pro-quantity">
-          <input type="number" value="${item.quantity}" name="quantity" min="0" max="50">
+          <input type="number" value="${item.number}" name="quantity" min="0" max="50">
         </div>
         <div class="pro-total">$${subtotal}</div>
         <button onclick="removeFromCart(${index})">x</button>
@@ -40,7 +40,7 @@ function renderCart() {
         <img src="${item.image}">
         <div style="flex:1; margin:0 6px;">
           <p style="margin:0;font-size:13px;">${item.title.trim().split(" ").slice(-2).join(" ")}</p>
-          <small>${item.quantity} × ${item.price}</small>
+          <small>${item.number} × ${item.price}</small>
         </div>
         <span>$${subtotal}</span>
       </div>
@@ -62,18 +62,20 @@ function updatecart(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   document.querySelectorAll('.cart-item input[name="quantity"]').forEach((input, index) => {
-    const newQuantity = parseInt(input.value);
-
-    if (newQuantity <= 0) {
-      cart.splice(index, 1);
+    const newnumber = parseInt(input.value) || 0;
+    if (newnumber <= 0) {
+      cart[index].__remove = true;
     } else {
-      cart[index].quantity = newQuantity;
+      cart[index].number = newnumber;
     }
   });
 
+  cart = cart.filter(item => !item.__remove);
+
   localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart(); // render lại để cập nhật tổng tiền và số lượng
+  renderCart(); 
 }
+
 
 
 function removeFromCart(index) {
@@ -89,9 +91,9 @@ function addToCart(product) {
   const existingIndex = cart.findIndex(item => item.id === product.id);
 
   if (existingIndex !== -1) {
-    cart[existingIndex].quantity += 1;
+    cart[existingIndex].number += 1;
   } else {
-    cart.push({ ...product, quantity: 1 });
+    cart.push({ ...product, number: 1 });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
 

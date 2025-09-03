@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const title = card.querySelector("h3").textContent.trim();
       const price = card.querySelector(".price-new").textContent.trim();
       const image = card.querySelector("img").src;
-      var quantity = 1;
+      var number = 1;
 
-      const product = { title, price, image, quantity };
+      const product = { title, price, image, number };
       addToCart(product);
     });
   });
@@ -66,38 +66,37 @@ function addToCart(product) {
   const existingIndex = cart.findIndex(item => item.title === product.title);
   console.log(existingIndex);
   if (existingIndex !== -1) {
-    cart[existingIndex].quantity += 1;
+    cart[existingIndex].number += 1;
   } else {
-    cart.push({ ...product, quantity: 1 });
+    cart.push({ ...product, number: 1 });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  quantity.innerHTML=  cart.reduce( ((a,b) => a + b.quantity), 0);
+  quantity.innerHTML=  cart.reduce( ((a,b) => a + b.number), 0);
+  renderCart();
 }
 
 function renderCart() {
   const dropdownContainer = document.querySelector(".cart-dropdown__items");
   const dropdownTotal = document.getElementById("dropdown-total");
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  console.log(cart);
   dropdownContainer.innerHTML = "";
-
   let total = 0;
-
   cart.forEach((item, index) => {
     const priceNumber = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
-    const subtotal = priceNumber * item.quantity;
+    const subtotal = priceNumber * item.number;
     total += subtotal;
     dropdownContainer.innerHTML += `
       <div class="cart-dropdown__item">
         <img src="${item.image}">
         <div style="flex:1; margin:0 6px;">
           <p style="margin:0;font-size:13px;">${item.title.trim().split(" ").slice(-2).join(" ")}</p>
-          <small>${item.quantity} × ${item.price}</small>
+          <small>${item.number} × ${item.price}</small>
         </div>
         <span>$${subtotal}</span>
       </div>
     `;
   });
+  console.log(dropdownContainer);
   dropdownTotal.textContent = "$" + total.toLocaleString();
-  quantity.innerHTML=  (JSON.parse(localStorage.getItem("cart")) || []).reduce( ((a,b) => a + b.quantity), 0);
+  quantity.innerHTML=  (JSON.parse(localStorage.getItem("cart")) || []).reduce( ((a,b) => a + b.number), 0);
 }
