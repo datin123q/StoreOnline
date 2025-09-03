@@ -33,9 +33,11 @@ section {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #d6d6d6;
-  position: sticky;
+  position: fixed;
   z-index: 100;
-  top: 0;
+  top: 41px;
+  left: 0;
+  right: 0;
   max-width: 1440px;
   margin: 0px auto;
 }
@@ -353,8 +355,11 @@ footer .footer-unline p {
 }
 
 .top {
-  background: #222;
+  background: black;
   color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 .top .topbar {
   background: black;
@@ -557,7 +562,7 @@ footer .footer-unline p {
   margin: 0px auto;
 }
 .banner__sidebar {
-  padding: 40px 0 0px 135px;
+  padding: 180px 0 0px 135px;
   flex: 25%;
   display: flex;
   flex-direction: column;
@@ -586,7 +591,7 @@ footer .footer-unline p {
   }
 }
 .banner__main {
-  padding: 40px 135px 0px 45px;
+  padding: 180px 135px 0px 45px;
   align-self: center;
   flex: 75%;
 }
@@ -631,7 +636,7 @@ footer .footer-unline p {
   flex-direction: column;
   gap: 24px;
 }
-.flash-sales__header__main__text .top {
+.flash-sales__header__main__text__top {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -644,14 +649,14 @@ footer .footer-unline p {
   line-height: 1.5;
   font-weight: 600;
 }
-.flash-sales__header__main__text .top .red {
+.flash-sales__header__main__text__top .red {
   width: 20px;
   height: 40px;
   background: red;
   border-radius: 3px;
 }
 @media (max-width: 876px) {
-  .flash-sales__header__main__text .top {
+  .flash-sales__header__main__text__top {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -827,7 +832,7 @@ footer .footer-unline p {
   flex-direction: column;
   gap: 20px;
 }
-.best-selling__header__main .top {
+.best-selling__header__main__top {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -840,14 +845,14 @@ footer .footer-unline p {
   line-height: 1.5;
   font-weight: 600;
 }
-.best-selling__header__main .top .red {
+.best-selling__header__main__top .red {
   width: 20px;
   height: 40px;
   background: red;
   border-radius: 3px;
 }
 @media (max-width: 876px) {
-  .best-selling__header__main .top {
+  .best-selling__header__main__top {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 400;

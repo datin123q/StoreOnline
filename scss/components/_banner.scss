@@ -5,7 +5,7 @@
     max-width: 1440px;
     margin: 0px auto;
     &__sidebar{
-        padding: 40px 0 0px 135px;
+        padding: 180px 0 0px 135px;
         @include abs.respond() {
           padding: 40px 0 0px 35px;
           @include abs.font("Poppins", 10px, #000000, 1.5, 400);
@@ -20,7 +20,7 @@
         border-right: 1px solid #d6d6d6;
     }
     &__main{
-        padding: 40px 135px 0px 45px;
+        padding: 180px 135px 0px 45px;
         align-self: center;
         @include abs.respond() {
           padding: 40px 35px 0px 45px;
