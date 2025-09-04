@@ -580,7 +580,7 @@ footer .footer-unline p {
 }
 @media (max-width: 876px) {
   .banner__sidebar {
-    padding: 40px 0 0px 35px;
+    padding: 140px 0 0px 35px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -597,7 +597,7 @@ footer .footer-unline p {
 }
 @media (max-width: 876px) {
   .banner__main {
-    padding: 40px 35px 0px 45px;
+    padding: 140px 35px 0px 45px;
   }
   .banner__main img {
     height: 200px;

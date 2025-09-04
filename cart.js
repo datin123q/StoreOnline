@@ -20,62 +20,61 @@ function renderCart() {
     const subtotal = priceNumber * item.number;
     total += subtotal;
 
-    cartContainer.innerHTML += `
-      <div class="cart-item">
-        <div class="pro-title">
-          <img src="${item.image}" width="54">
-          <span>${item.title.trim().split(" ").slice(-2).join(" ")}</span>
-        </div>
-        <span class="pro-price">${item.price}</span>
-        <div class="pro-quantity">
-          <input type="number" value="${item.number}" name="quantity" min="0" max="50">
-        </div>
-        <div class="pro-total">$${subtotal}</div>
+    const div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerHTML = `
+      <div class="pro-title">
+        <img src="${item.image}" width="54">
+        <span>${item.title.trim().split(" ").slice(-2).join(" ")}</span>
       </div>
+      <span class="pro-price">${item.price}</span>
+      <div class="pro-quantity"></div>
+      <div class="pro-total">$${subtotal}</div>
     `;
+    const inputEl = document.createElement("input");
+    inputEl.type = "number";
+    inputEl.value = item.number;
+    inputEl.min = 0;
+    inputEl.max = 500;
 
-    dropdownContainer.innerHTML += `
-      <div class="cart-dropdown__item">
-        <img src="${item.image}">
-        <div style="flex:1; margin:0 6px;">
-          <p style="margin:0;font-size:13px;">${item.title.trim().split(" ").slice(-2).join(" ")}</p>
-          <small>${item.number} × ${item.price}</small>
-        </div>
-        <span>$${subtotal}</span>
+    inputEl.addEventListener("input", (e) => {
+      cart[index].number = parseInt(e.target.value, 10) || 0;
+      if(cart[index].number ==0) removeFromCart(index)
+        else{
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCart(); 
+        }
+      
+    });
+
+    div.querySelector(".pro-quantity").appendChild(inputEl);
+    cartContainer.appendChild(div);
+
+    const drop = document.createElement("div");
+    drop.className = "cart-dropdown__item";
+    drop.innerHTML = `
+      <img src="${item.image}">
+      <div style="flex:1; margin:0 6px;">
+        <p style="margin:0;font-size:13px;">${item.title.trim().split(" ").slice(-2).join(" ")}</p>
+        <small>${item.number} × ${item.price}</small>
       </div>
+      <span>$${subtotal}</span>
     `;
+    dropdownContainer.appendChild(drop);
   });
-   cartContainer.innerHTML += `
-    <div class="cart-total">
-      <strong>Tổng tiền: </strong> 
-      <span>$${total.toLocaleString()}</span>
-    </div>
+
+  const totalDiv = document.createElement("div");
+  totalDiv.className = "cart-total";
+  totalDiv.innerHTML = `
+    <strong>Tổng tiền: </strong>
+    <span>$${total.toLocaleString()}</span>
   `;
+  cartContainer.appendChild(totalDiv);
+
   dropdownTotal.textContent = "$" + total.toLocaleString();
+
   updateCartCount();
 }
-document.querySelector(".update-cart").addEventListener("click", () =>{
-    updatecart();
-});
-function updatecart(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  document.querySelectorAll('.cart-item input[name="quantity"]').forEach((input, index) => {
-    const newnumber = parseInt(input.value) || 0;
-    if (newnumber <= 0) {
-      cart[index].__remove = true;
-    } else {
-      cart[index].number = newnumber;
-    }
-  });
-
-  cart = cart.filter(item => !item.__remove);
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  renderCart(); 
-}
-
-
 
 function removeFromCart(index) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];

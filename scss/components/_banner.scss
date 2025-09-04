@@ -7,7 +7,7 @@
     &__sidebar{
         padding: 180px 0 0px 135px;
         @include abs.respond() {
-          padding: 40px 0 0px 35px;
+          padding: 140px 0 0px 35px;
           @include abs.font("Poppins", 10px, #000000, 1.5, 400);
         }
         flex: 25%;
@@ -23,7 +23,7 @@
         padding: 180px 135px 0px 45px;
         align-self: center;
         @include abs.respond() {
-          padding: 40px 35px 0px 45px;
+          padding: 140px 35px 0px 45px;
           img{
             height: 200px;
           }
